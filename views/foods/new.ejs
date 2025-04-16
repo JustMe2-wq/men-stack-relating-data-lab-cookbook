@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create new foods</title>
+</head>
+
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+        <h1>Create New Food</h1>
+        <form action="/users/<%= user._id %>/foods" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" required>
+            <br>
+            <label for="expiration">Expiration:</label>
+            <input type="date" name="expiration" id="expiration" required>
+            <br>
+            <label for="quantity">Quantity:</label>
+            <input type="number" name="quantity" id="quantity" required>
+            <br>
+            <label for="isFavorite">Is Favorite:</label>
+            <input type="checkbox" name="isFavorite" id="isFavorite" value="true">
+            <br>
+            <button type="submit">Create Food</button>
+        </form>
+</body>
+
+</html>

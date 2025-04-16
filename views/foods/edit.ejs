@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit </title>
+</head>
+
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+        <h1>Edit <%= food.name %>
+        </h1>
+        <form action="/users/<%= user._id %>/foods/<%= food._id %>?_method=PUT" method="POST">
+        </form>
+        <form action="/users/<%= user._id %>/foods" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" value="<%= food.name %>">
+            <br>
+            <label for="expiration">Expiration:</label>
+            <input type="date" name="expiration" id="expiration" value="<%= food.expiration %>">
+            <br>
+            <label for="quantity">Quantity:</label>
+            <input type="number" name="quantity" id="quantity" value="<%= food.quantity %>">
+            <br>
+            <label for="isFavorite">Is Favorite:</label>
+            <input type="checkbox" name="isFavorite" id="isFavorite" value="true" <%=food.isFavorite ? 'checked' : ''
+                %>>
+            <br>
+            <button type="submit">Update Food</button>
+        </form>
+</body>
+
+</html>
